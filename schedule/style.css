@@ -104,6 +104,7 @@ strong { font-weight: 600; }
 code {
   font: 0.9em/1 ui-monospace, "Cascadia Mono", Consolas, monospace;
   background: var(--paper-2); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 1px 5px;
+  white-space: nowrap; overflow-wrap: normal;
 }
 
 /* 요약 상자 — 인주 줄 하나로 표시 */

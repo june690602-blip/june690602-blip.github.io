@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 · 일정관리 비서</title>
+<meta name="description" content="일정관리 비서(PC 위젯 · 안드로이드 앱)가 어떤 정보를 어디에 두고, 구글 계정 권한을 어떻게 쓰는지 적었습니다.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">일정관리 비서</a>
+    <nav class="nav" aria-label="페이지">
+      <a href="./">소개</a>
+      <a href="privacy.html" aria-current="page">개인정보처리방침</a>
+      <a href="terms.html">서비스 약관</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>개인정보처리방침</h1>
+  <p class="meta">시행일 2026년 10월 26일</p>
+
+  <p>이 방침은 일정관리 비서의 PC 위젯(Windows)과 안드로이드 앱(아래 '앱'), 그리고 이 누리집에 적용됩니다.</p>
+
+  <div class="note">
+    <div class="label">한눈에</div>
+    <ul>
+      <li>사용자가 쓴 일정 · 할 일 · 기록은 <strong>사용자의 기기</strong>와 <strong>사용자가 고른 저장 공간</strong>(동기화 폴더 또는 사용자 본인의 구글 드라이브)에만 저장됩니다.</li>
+      <li>개발자는 서버를 두지 않으며, 사용자의 일정이나 계정 정보를 받지 않습니다.</li>
+      <li>광고, 사용 통계, 분석 도구, 오류 수집 도구는 없습니다.</li>
+      <li>구글 권한은 이 앱이 만든 것만 다루는 <code>drive.appdata</code>, <code>drive.file</code> 두 가지이며, 사용자가 켤 때만 묻습니다.</li>
+    </ul>
+  </div>
+
+  <h2><span class="no">1</span>처리하는 정보와 저장 위치</h2>
+  <div class="table">
+    <table>
+      <thead><tr><th>정보</th><th>어디에 저장되나</th><th>언제</th></tr></thead>
+      <tbody>
+        <tr><td>일정 · 반복 일정 · 할 일 · 한 줄 기록 · 돌아보기</td>
+          <td>각 기기 안 — PC는 사용자 데이터 폴더, 폰은 앱 전용 저장 공간</td><td>앱을 쓸 때</td></tr>
+        <tr><td>설정(날씨 도시, 알림 설정, 바로 가기 등)</td>
+          <td>각 기기 안. 기기끼리 나누지 않습니다.</td><td>앱을 쓸 때</td></tr>
+        <tr><td>동기화 파일(위 일정 등의 사본)</td>
+          <td>사용자가 고른 폴더 — 또는 사용자 구글 드라이브의 숨김 앱 폴더(appDataFolder)</td><td>사용자가 동기화를 켤 때</td></tr>
+        <tr><td>Claude 연동 시트(일정 · 할 일 · 기록 사본, Claude가 넣은 줄)</td>
+          <td>사용자 구글 드라이브의 구글 시트 한 장 '일정관리 비서 · Claude 연동'</td><td>PC 위젯에서 사용자가 켤 때</td></tr>
+        <tr><td>구글 계정 메일 주소</td>
+          <td>각 기기 안. 어느 계정에 연결됐는지 화면에 보여 주는 데만 씁니다.</td><td>구글 연결을 켤 때</td></tr>
+        <tr><td>구글 로그인 정보(토큰)</td>
+          <td>PC는 운영체제 암호화(Windows DPAPI)로 싸서 사용자 데이터 폴더에, 폰은 구글 Play 서비스가 관리합니다.</td><td>구글 연결을 켤 때</td></tr>
+        <tr><td>날씨 · 공휴일 사본</td>
+          <td>각 기기 안(다음에 인터넷이 없어도 보이도록)</td><td>앱을 쓸 때</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>앱은 위치, 연락처, 사진, 통화 기록, 광고 식별자를 읽지 않습니다. 안드로이드 앱이 요청하는 권한은 인터넷, 알림, 정확한 시각 알림, 기기 재시작 뒤 알림 다시 걸기뿐입니다.</p>
+
+  <h2><span class="no">2</span>구글 사용자 데이터</h2>
+  <p>구글 연결은 선택 기능입니다. 사용자가 설정에서 켤 때 구글 로그인 화면이 열리고, 아래 권한만 요청합니다.</p>
+  <div class="table">
+    <table>
+      <thead><tr><th>권한</th><th>읽고 쓰는 것</th><th>쓰는 목적</th></tr></thead>
+      <tbody>
+        <tr><td><code>drive.appdata</code></td>
+          <td>드라이브의 숨김 앱 폴더 안, 이 앱이 만든 기기별 동기화 파일(<code>sync-&lt;기기 ID&gt;.json</code>)</td>
+          <td>PC와 폰의 일정 · 할 일 · 기록을 맞추기</td></tr>
+        <tr><td><code>drive.file</code></td>
+          <td>이 앱이 만든 구글 시트 한 장('일정관리 비서 · Claude 연동')</td>
+          <td>사용자가 claude.ai의 Claude와 이 시트로 일정 · 할 일을 주고받기(PC 위젯 전용)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>두 권한 모두 <strong>이 앱이 만든 파일만</strong> 다룰 수 있습니다. 앱은 사용자의 다른 드라이브 파일, 메일, 캘린더, 연락처를 볼 수 없습니다.
+    연결된 계정을 보여 주려고 드라이브 정보에서 계정 메일 주소를 읽습니다.</p>
+  <ul>
+    <li>구글에서 받은 데이터는 위 기능을 사용자에게 제공하는 데만 씁니다.</li>
+    <li>개발자나 다른 사람에게 보내지 않고, 팔지 않으며, 광고나 맞춤 광고에 쓰지 않습니다.</li>
+    <li>사람이 그 내용을 읽지 않습니다. 앱이 사용자의 기기 안에서 처리합니다.</li>
+    <li>인공지능 모델을 학습시키는 데 쓰지 않습니다.</li>
+  </ul>
+  <p>일정관리 비서가 Google API에서 받은 정보를 사용하고 다른 앱으로 전송하는 방식은
+    제한된 사용(Limited Use) 요구사항을 포함한
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 준수합니다.</p>
+
+  <h2><span class="no">3</span>앱이 연결하는 바깥 서비스</h2>
+  <p>앱은 아래 서비스에만 직접 연결합니다. 인터넷 요청이라 각 서비스는 기기의 IP 주소를 볼 수 있습니다.</p>
+  <div class="table">
+    <table>
+      <thead><tr><th>서비스</th><th>보내는 것</th><th>왜</th></tr></thead>
+      <tbody>
+        <tr><td>Open-Meteo<br><a href="https://open-meteo.com/">open-meteo.com</a></td>
+          <td>사용자가 목록에서 고른 도시의 좌표</td><td>오늘 날씨</td></tr>
+        <tr><td>대한민국 공휴일 공개 자료<br><code>holidays.hyunbin.page</code></td>
+          <td>받을 연도</td><td>달력의 공휴일</td></tr>
+        <tr><td>Google<br>(로그인 · 드라이브 · 시트)</td>
+          <td>위 2번의 동기화 파일과 시트 내용</td><td>사용자가 켠 구글 연결 기능</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>폴더 동기화를 고르면, 그 폴더를 옮기는 서비스(OneDrive 등)는 사용자가 쓰는 서비스이며 그 서비스의 방침을 따릅니다.
+    PC 위젯의 'Claude 연결(MCP)'을 사용자가 직접 등록하면, Claude는 이 PC의 일정 파일을 읽고 일정을 넣을 수 있습니다.
+    이때 Claude에게 보낸 내용은 사용자가 쓰는 Claude 서비스의 방침을 따릅니다. 메일로 보내기 같은 버튼은 사용자의 브라우저에서 Gmail 쓰기 화면을 열 뿐이며, 보내기는 사용자가 직접 합니다.</p>
+
+  <h2><span class="no">4</span>제3자 제공과 처리 위탁</h2>
+  <p>개발자는 사용자의 개인정보를 받지 않으므로 제3자에게 제공하거나 처리를 위탁하지 않습니다.</p>
+
+  <h2><span class="no">5</span>보관 기간과 지우는 법</h2>
+  <ul>
+    <li><strong>기기 안의 정보</strong> — 사용자가 지우거나 앱을 지울 때까지 남습니다. 앱 안에서 일정 · 할 일을 지우면 다른 기기에도 지워졌다고 전해집니다.</li>
+    <li><strong>드라이브 숨김 앱 폴더</strong> — 구글 드라이브 웹 › 설정 › 앱 관리 › '일정관리 비서' › 숨겨진 앱 데이터 삭제.</li>
+    <li><strong>Claude 연동 시트</strong> — 사용자 드라이브에서 그 시트를 지우면 됩니다.</li>
+    <li><strong>구글 권한</strong> — 앱 설정의 '끊기'는 그 기기만 끊습니다. 권한을 완전히 거두려면
+      <a href="https://myaccount.google.com/connections">구글 계정 › 서드 파티 연결</a>에서 '일정관리 비서'를 삭제합니다. 그러면 모든 기기의 구글 연결이 함께 끊깁니다.</li>
+  </ul>
+
+  <h2><span class="no">6</span>사용자의 권리</h2>
+  <p>모든 정보가 사용자의 기기와 사용자 본인의 계정에 있으므로, 사용자는 언제든 직접 열람 · 고치기 · 지우기 · 처리 멈추기(동기화 끄기, 권한 거두기)를 할 수 있습니다.
+    도움이 필요하면 아래 문의처로 알려 주세요.</p>
+
+  <h2><span class="no">7</span>안전을 위한 조치</h2>
+  <ul>
+    <li>바깥 서비스와는 모두 HTTPS로 연결합니다.</li>
+    <li>PC 구글 로그인은 PKCE 방식을 쓰고, 로그인하는 동안만 이 컴퓨터 안의 주소(127.0.0.1)를 잠깐 엽니다.</li>
+    <li>PC의 구글 로그인 정보는 운영체제 암호화로 싸서 저장합니다.</li>
+    <li>PC 위젯의 화면 쪽 코드는 인터넷에 연결할 수 없게 막아 두었습니다.</li>
+  </ul>
+
+  <h2><span class="no">8</span>쿠키와 이 누리집</h2>
+  <p>앱과 이 누리집은 쿠키, 분석 도구, 바깥 글꼴 · 스크립트를 쓰지 않습니다. 이 누리집은 GitHub Pages로 운영되며,
+    GitHub이 보안을 위해 접속 기록(IP 주소 등)을 남길 수 있습니다(<a href="https://docs.github.com/ko/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보처리방침</a>).</p>
+
+  <h2><span class="no">9</span>어린이</h2>
+  <p>앱은 어린이를 대상으로 하지 않으며, 개발자는 누구의 개인정보도 받지 않습니다.</p>
+
+  <h2><span class="no">10</span>방침이 바뀔 때</h2>
+  <p>바뀌면 이 페이지에 새 내용과 시행일을 올립니다. 사용자에게 불리하게 바뀌는 경우에는 시행 7일 전부터 이 페이지에 미리 알립니다.</p>
+
+  <h2><span class="no">11</span>문의</h2>
+  <p>개인정보에 관한 문의 · 요청은 <a href="https://github.com/june690602-blip/june690602-blip.github.io/issues">GitHub 이슈</a>로 남겨 주세요.
+    구글 로그인 화면의 '개발자 정보'에 있는 메일 주소로도 연락할 수 있습니다.</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>일정관리 비서</span>
+    <a href="./">소개</a>
+    <a href="terms.html">서비스 약관</a>
+  </div>
+</footer>
+</body>
+</html>
